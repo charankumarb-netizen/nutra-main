@@ -1,0 +1,4 @@
+# Install a CPU or CUDA PyTorch build appropriate for your computer first if needed.
+torch>=2.2
+transformers>=4.40,<5
+sentencepiece>=0.2.0

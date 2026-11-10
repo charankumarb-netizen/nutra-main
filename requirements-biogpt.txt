@@ -1,0 +1,6 @@
+# Optional: BioGPT second opinion + fine-tuning an English biomedical BERT (PyTorch / Hugging Face)
+torch>=2.2
+transformers>=4.40
+tokenizers>=0.19
+sacremoses>=0.1.1     # needed by the BioGPT tokenizer
+accelerate>=0.30

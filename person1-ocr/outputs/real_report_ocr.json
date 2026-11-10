@@ -1,0 +1,352 @@
+{
+    "success": true,
+    "language": "pt",
+    "image": "person1-ocr\\tests\\sample_images\\real_report.png",
+    "preprocessing": true,
+    "text": "CityCare\n+351 21 456 7890\nDiagnostics\n0\nwww.citycarediagnostics.pt\nRELATÓRIO DE EXAMES LABORATORIAIS\nPaciente: João Silva\nData da Coleta:\n10/01/2025\nIdade:\n35 anos\nData do Resultado: 11/01/2025\nExame\nResultado\nValor de Referência\nHemoglobina\n10,2 g/dL\n13,0− 17,0 g/dL\nVitamina D (25-OH)\n18 ng/mL\n30 - 100 ng/mL\nVitamina B12\n150 pg/mL\n200 - 900 pg/mL\nFerro Sérico\n42μg/dL\n65 - 175g/dL\nFerritina\n12 ng/mL\n30 - 400 ng/mL\nObservação: Resultados sugerem deficiência de vitamina B12 e vitamina D.\nRicando\nDr. Ricardo Mendes\nCRM 12345",
+    "lines": [
+        {
+            "text": "CityCare",
+            "confidence": 0.993499755859375,
+            "box": [
+                75,
+                0,
+                186,
+                20
+            ]
+        },
+        {
+            "text": "+351 21 456 7890",
+            "confidence": 0.994877815246582,
+            "box": [
+                558,
+                4,
+                672,
+                22
+            ]
+        },
+        {
+            "text": "Diagnostics",
+            "confidence": 0.999994695186615,
+            "box": [
+                74,
+                14,
+                211,
+                46
+            ]
+        },
+        {
+            "text": "0",
+            "confidence": 0.4469120502471924,
+            "box": [
+                543,
+                27,
+                558,
+                40
+            ]
+        },
+        {
+            "text": "www.citycarediagnostics.pt",
+            "confidence": 0.9999287724494934,
+            "box": [
+                559,
+                23,
+                732,
+                42
+            ]
+        },
+        {
+            "text": "RELATÓRIO DE EXAMES LABORATORIAIS",
+            "confidence": 0.9985959529876709,
+            "box": [
+                149,
+                72,
+                611,
+                97
+            ]
+        },
+        {
+            "text": "Paciente: João Silva",
+            "confidence": 0.9993299245834351,
+            "box": [
+                0,
+                116,
+                163,
+                140
+            ]
+        },
+        {
+            "text": "Data da Coleta:",
+            "confidence": 0.9998254776000977,
+            "box": [
+                399,
+                121,
+                517,
+                141
+            ]
+        },
+        {
+            "text": "10/01/2025",
+            "confidence": 0.9999982714653015,
+            "box": [
+                548,
+                121,
+                642,
+                142
+            ]
+        },
+        {
+            "text": "Idade:",
+            "confidence": 0.9750679135322571,
+            "box": [
+                0,
+                141,
+                54,
+                163
+            ]
+        },
+        {
+            "text": "35 anos",
+            "confidence": 0.9992672801017761,
+            "box": [
+                79,
+                140,
+                146,
+                166
+            ]
+        },
+        {
+            "text": "Data do Resultado: 11/01/2025",
+            "confidence": 0.9996992945671082,
+            "box": [
+                399,
+                144,
+                649,
+                165
+            ]
+        },
+        {
+            "text": "Exame",
+            "confidence": 0.9999603033065796,
+            "box": [
+                5,
+                192,
+                70,
+                213
+            ]
+        },
+        {
+            "text": "Resultado",
+            "confidence": 0.9999618530273438,
+            "box": [
+                337,
+                193,
+                422,
+                211
+            ]
+        },
+        {
+            "text": "Valor de Referência",
+            "confidence": 0.9998623728752136,
+            "box": [
+                558,
+                191,
+                720,
+                211
+            ]
+        },
+        {
+            "text": "Hemoglobina",
+            "confidence": 0.9999828934669495,
+            "box": [
+                8,
+                223,
+                118,
+                243
+            ]
+        },
+        {
+            "text": "10,2 g/dL",
+            "confidence": 0.9996938705444336,
+            "box": [
+                342,
+                221,
+                418,
+                243
+            ]
+        },
+        {
+            "text": "13,0− 17,0 g/dL",
+            "confidence": 0.9375923275947571,
+            "box": [
+                567,
+                219,
+                699,
+                240
+            ]
+        },
+        {
+            "text": "Vitamina D (25-OH)",
+            "confidence": 0.9993508458137512,
+            "box": [
+                9,
+                251,
+                159,
+                268
+            ]
+        },
+        {
+            "text": "18 ng/mL",
+            "confidence": 0.9997576475143433,
+            "box": [
+                342,
+                248,
+                420,
+                269
+            ]
+        },
+        {
+            "text": "30 - 100 ng/mL",
+            "confidence": 0.9529088735580444,
+            "box": [
+                568,
+                246,
+                697,
+                267
+            ]
+        },
+        {
+            "text": "Vitamina B12",
+            "confidence": 0.9999603629112244,
+            "box": [
+                9,
+                276,
+                116,
+                294
+            ]
+        },
+        {
+            "text": "150 pg/mL",
+            "confidence": 0.999817967414856,
+            "box": [
+                339,
+                273,
+                423,
+                295
+            ]
+        },
+        {
+            "text": "200 - 900 pg/mL",
+            "confidence": 0.9528416991233826,
+            "box": [
+                568,
+                273,
+                704,
+                294
+            ]
+        },
+        {
+            "text": "Ferro Sérico",
+            "confidence": 0.9999251365661621,
+            "box": [
+                7,
+                300,
+                108,
+                321
+            ]
+        },
+        {
+            "text": "42μg/dL",
+            "confidence": 0.9112507700920105,
+            "box": [
+                346,
+                299,
+                417,
+                322
+            ]
+        },
+        {
+            "text": "65 - 175g/dL",
+            "confidence": 0.8801068663597107,
+            "box": [
+                573,
+                297,
+                696,
+                318
+            ]
+        },
+        {
+            "text": "Ferritina",
+            "confidence": 0.9999862313270569,
+            "box": [
+                7,
+                327,
+                79,
+                345
+            ]
+        },
+        {
+            "text": "12 ng/mL",
+            "confidence": 0.9994152784347534,
+            "box": [
+                342,
+                324,
+                420,
+                348
+            ]
+        },
+        {
+            "text": "30 - 400 ng/mL",
+            "confidence": 0.9593348503112793,
+            "box": [
+                572,
+                322,
+                699,
+                346
+            ]
+        },
+        {
+            "text": "Observação: Resultados sugerem deficiência de vitamina B12 e vitamina D.",
+            "confidence": 0.9937621355056763,
+            "box": [
+                0,
+                370,
+                545,
+                394
+            ]
+        },
+        {
+            "text": "Ricando",
+            "confidence": 0.9894464612007141,
+            "box": [
+                585,
+                392,
+                714,
+                447
+            ]
+        },
+        {
+            "text": "Dr. Ricardo Mendes",
+            "confidence": 0.9995741248130798,
+            "box": [
+                579,
+                454,
+                728,
+                471
+            ]
+        },
+        {
+            "text": "CRM 12345",
+            "confidence": 0.9998337626457214,
+            "box": [
+                612,
+                472,
+                695,
+                491
+            ]
+        }
+    ],
+    "line_count": 34,
+    "average_confidence": 0.9700389364186455,
+    "processing_time_seconds": 37.328
+}

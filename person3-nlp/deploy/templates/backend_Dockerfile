@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+# Hugging Face Spaces runs the container as user 1000
+RUN useradd -m -u 1000 user
+WORKDIR /home/user/app
+COPY --chown=user requirements.txt .
+RUN pip install -r requirements.txt
+COPY --chown=user src ./src
+COPY --chown=user models ./models
+USER user
+ENV PYTHONPATH=/home/user/app/src \
+    NUTRICHECK_CORS_ORIGINS=* \
+    NUTRICHECK_VAULT_DIR=/tmp/nutricheck_vault \
+    HF_HOME=/home/user/.cache/huggingface
+EXPOSE 7860
+CMD ["uvicorn", "nutricheck_nlp.api.app:app", "--host", "0.0.0.0", "--port", "7860"]

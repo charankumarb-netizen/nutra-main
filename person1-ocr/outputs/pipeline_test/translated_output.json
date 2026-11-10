@@ -1,0 +1,13 @@
+{
+    "original_text": "RELATÓRIO MÉDICO\nPaciente: TESTE\nHemoglobina: 10,2 g/dL\nVitamina D: 18 ng/mL\nVitamina B12: 150 pg/mL\nObservação:\nPaciente apresenta deficiência de vitamina B12.",
+    "translated_text": "MEDICAL REPORT Patient: TEST Hemoglobin: 10,2 g/dL Vitamin D: 18 ng/mL Vitamin B12: 150 pg/mL Observation: Patient has vitamin B12 deficiency.",
+    "source_language": "pt",
+    "target_language": "en",
+    "status": "translated",
+    "confidence": null,
+    "warnings": [
+        "Review the English translation against the original report.",
+        "Manually check clinical negation, abnormal/normal labels, decimal separators, dates and units.",
+        "This model is not clinically validated and must not be used as the sole basis for diagnosis."
+    ]
+}

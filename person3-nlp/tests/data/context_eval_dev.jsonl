@@ -1,0 +1,120 @@
+{"text": "Patient progressing with iron deficiency and associated anemia.", "label": "affirmed"}
+{"text": "Vitamin D deficit found after testing.", "label": "affirmed"}
+{"text": "Vitamin B12 is low, under follow-up.", "label": "affirmed"}
+{"text": "She has a folic acid deficiency.", "label": "affirmed"}
+{"text": "Serum calcium levels are reduced.", "label": "affirmed"}
+{"text": "Clinical picture of established iron deficiency.", "label": "affirmed"}
+{"text": "Ferritin below what is expected for age.", "label": "affirmed"}
+{"text": "Persistent hypovitaminosis D.", "label": "affirmed"}
+{"text": "Vitamin B12 insufficiency was diagnosed.", "label": "affirmed"}
+{"text": "Folate level decreased.", "label": "affirmed"}
+{"text": "Marked calcium deficiency is observed.", "label": "affirmed"}
+{"text": "The patient has an iron shortage.", "label": "affirmed"}
+{"text": "Vitamin D is insufficient.", "label": "affirmed"}
+{"text": "Cobalamin at a low level.", "label": "affirmed"}
+{"text": "Vitamin D deficiency persists despite supplementation.", "label": "affirmed"}
+{"text": "Iron deficiency was not detected.", "label": "negated"}
+{"text": "Patient denies vitamin B12 deficiency.", "label": "negated"}
+{"text": "Calcium unchanged and normal.", "label": "negated"}
+{"text": "Vitamin D at normal levels.", "label": "negated"}
+{"text": "No signs of folate deficiency.", "label": "negated"}
+{"text": "Iron deficiency was ruled out by the tests.", "label": "negated"}
+{"text": "Ferritin within the expected range.", "label": "negated"}
+{"text": "No evidence of calcium deficiency.", "label": "negated"}
+{"text": "Vitamin B12 deficit excluded.", "label": "negated"}
+{"text": "Iron levels are adequate.", "label": "negated"}
+{"text": "No vitamin D deficiency was found.", "label": "negated"}
+{"text": "B12 normal.", "label": "negated"}
+{"text": "There is no folic acid deficiency.", "label": "negated"}
+{"text": "Tests show no iron depletion.", "label": "negated"}
+{"text": "Folate within reference values.", "label": "negated"}
+{"text": "Possible iron deficiency, await ferritin.", "label": "suspected"}
+{"text": "We cannot rule out vitamin B12 deficiency.", "label": "suspected"}
+{"text": "Suspected vitamin D deficit.", "label": "suspected"}
+{"text": "Probable calcium deficiency.", "label": "suspected"}
+{"text": "Working hypothesis: folate deficiency.", "label": "suspected"}
+{"text": "Worth investigating iron deficiency.", "label": "suspected"}
+{"text": "Suggestive of possible vitamin B12 deficiency.", "label": "suspected"}
+{"text": "Doubt remains about vitamin D deficiency.", "label": "suspected"}
+{"text": "Picture raises suspicion of iron deficiency.", "label": "suspected"}
+{"text": "This may be a folic acid deficiency.", "label": "suspected"}
+{"text": "Tests requested to clarify a possible calcium deficit.", "label": "suspected"}
+{"text": "Iron deficiency has not been excluded.", "label": "suspected"}
+{"text": "Possible vitamin B12 deficiency to be confirmed.", "label": "suspected"}
+{"text": "Clinical suspicion of vitamin D deficiency.", "label": "suspected"}
+{"text": "Consider iron deficiency as a possibility.", "label": "suspected"}
+{"text": "Maternal grandmother with vitamin D deficiency.", "label": "family_history"}
+{"text": "My father has iron deficiency.", "label": "family_history"}
+{"text": "Sister diagnosed with B12 deficiency.", "label": "family_history"}
+{"text": "Family history of iron deficiency.", "label": "family_history"}
+{"text": "The patient's mother has calcium deficiency.", "label": "family_history"}
+{"text": "Paternal uncle with vitamin D deficit.", "label": "family_history"}
+{"text": "Son with iron deficiency on treatment.", "label": "family_history"}
+{"text": "Relatives with folate deficiency.", "label": "family_history"}
+{"text": "Mother and grandmother with iron deficiency.", "label": "family_history"}
+{"text": "There are cases of vitamin B12 deficiency in the family.", "label": "family_history"}
+{"text": "The patient's brother has vitamin D deficiency.", "label": "family_history"}
+{"text": "Cousin with low ferritin.", "label": "family_history"}
+{"text": "Father on calcium replacement for deficiency.", "label": "family_history"}
+{"text": "First-degree relative with anemia from iron deficiency.", "label": "family_history"}
+{"text": "Family history of vitamin B12 deficiency.", "label": "family_history"}
+{"text": "Patient had iron deficiency in adolescence.", "label": "historical"}
+{"text": "Vitamin D deficiency in 2017, already corrected.", "label": "historical"}
+{"text": "Personal history of B12 deficiency.", "label": "historical"}
+{"text": "In the past she had a calcium deficit, resolved.", "label": "historical"}
+{"text": "Iron deficiency was present before treatment, now normalized.", "label": "historical"}
+{"text": "Folate deficiency during a previous pregnancy.", "label": "historical"}
+{"text": "Treated vitamin D deficiency last year.", "label": "historical"}
+{"text": "Was diagnosed with iron deficiency ten years ago.", "label": "historical"}
+{"text": "Previous B12 deficiency, no recurrence.", "label": "historical"}
+{"text": "Years ago had vitamin D deficiency.", "label": "historical"}
+{"text": "Past history of calcium deficiency.", "label": "historical"}
+{"text": "Iron deficiency overcome with replacement.", "label": "historical"}
+{"text": "Old folate deficit.", "label": "historical"}
+{"text": "Presented with vitamin D deficiency in 2016.", "label": "historical"}
+{"text": "Used to be iron deficient, corrected.", "label": "historical"}
+{"text": "A vegan diet raises the risk of vitamin B12 deficiency.", "label": "hypothetical"}
+{"text": "Sun exposure is recommended to prevent vitamin D deficiency.", "label": "hypothetical"}
+{"text": "If there is iron deficiency, start ferrous sulfate.", "label": "hypothetical"}
+{"text": "Avoid calcium deficit with dairy products.", "label": "hypothetical"}
+{"text": "Chronic omeprazole use can cause B12 deficiency.", "label": "hypothetical"}
+{"text": "Counseling on diet to prevent iron deficiency.", "label": "hypothetical"}
+{"text": "Pregnant women are at risk of folate deficiency.", "label": "hypothetical"}
+{"text": "Should vitamin D deficiency appear, supplement.", "label": "hypothetical"}
+{"text": "Screening to prevent calcium deficiency in older adults.", "label": "hypothetical"}
+{"text": "Long-term metformin may lead to B12 deficiency.", "label": "hypothetical"}
+{"text": "In case of iron deficiency, investigate bleeding.", "label": "hypothetical"}
+{"text": "Prophylaxis against folic acid deficiency was explained.", "label": "hypothetical"}
+{"text": "Risk factors for vitamin D deficiency were discussed.", "label": "hypothetical"}
+{"text": "Education on avoiding iron deficiency.", "label": "hypothetical"}
+{"text": "Prone to vitamin B12 deficiency after gastrectomy.", "label": "hypothetical"}
+{"text": "Ferritin: 8 ng/mL", "label": "lab_measurement"}
+{"text": "Vitamin D 25-OH: 18 ng/mL", "label": "lab_measurement"}
+{"text": "Vitamin B12 ......... 150 pg/mL", "label": "lab_measurement"}
+{"text": "Calcium total 8.1 mg/dL", "label": "lab_measurement"}
+{"text": "Hemoglobin = 10.2 g/dL", "label": "lab_measurement"}
+{"text": "Folate: 2.4 ng/mL (Ref: 3 - 17)", "label": "lab_measurement"}
+{"text": "Serum iron 45 ug/dL", "label": "lab_measurement"}
+{"text": "Transferrin saturation 12 %", "label": "lab_measurement"}
+{"text": "Cobalamin: 210 pg/mL", "label": "lab_measurement"}
+{"text": "Ionized calcium 1.05 mmol/L", "label": "lab_measurement"}
+{"text": "Ferritin 120 ng/mL [reference 15 - 150]", "label": "lab_measurement"}
+{"text": "Vitamin D: 44 ng/mL", "label": "lab_measurement"}
+{"text": "B12 - 560 pg/mL", "label": "lab_measurement"}
+{"text": "Folic acid: 9.8 ng/mL", "label": "lab_measurement"}
+{"text": "Result for ferritin: 22 ng/mL", "label": "lab_measurement"}
+{"text": "Patient reports a sore throat since yesterday.", "label": "unrelated"}
+{"text": "Blood pressure 130/85 mmHg.", "label": "unrelated"}
+{"text": "Return visit in two weeks.", "label": "unrelated"}
+{"text": "No chest pain.", "label": "unrelated"}
+{"text": "Mild visual impairment in the left eye.", "label": "unrelated"}
+{"text": "History of asthma in childhood.", "label": "unrelated"}
+{"text": "Suspected urinary infection.", "label": "unrelated"}
+{"text": "Risk of falls is high.", "label": "unrelated"}
+{"text": "Low-salt diet advised.", "label": "unrelated"}
+{"text": "Mother has hypertension.", "label": "unrelated"}
+{"text": "Fasting glucose 101 mg/dL.", "label": "unrelated"}
+{"text": "No known drug allergies.", "label": "unrelated"}
+{"text": "Lungs clear.", "label": "unrelated"}
+{"text": "Referral to cardiology.", "label": "unrelated"}
+{"text": "Attention deficit disorder followed by psychiatry.", "label": "unrelated"}

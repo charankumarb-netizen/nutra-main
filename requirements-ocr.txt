@@ -1,0 +1,4 @@
+# Optional: Person 1 OCR (see person1-ocr/requirements.txt for the authoritative list)
+paddlepaddle>=2.6
+paddleocr>=2.7
+opencv-python-headless>=4.8

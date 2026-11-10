@@ -1,0 +1,14 @@
+# Core: rule-based NLP + document parsing + trained context classifier + FastAPI + Streamlit
+pandas>=2.0
+numpy>=1.24
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+python-multipart>=0.0.9
+streamlit>=1.40
+requests>=2.31
+pymupdf>=1.24            # PDF text + tables (extract_pdf)
+python-docx>=1.1         # Word files (extract_docx)
+scikit-learn>=1.4,<1.9   # context classifier
+joblib>=1.3
+

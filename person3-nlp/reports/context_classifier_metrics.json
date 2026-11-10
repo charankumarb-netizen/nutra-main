@@ -1,0 +1,681 @@
+{
+  "trained_on": {
+    "examples": 7200,
+    "per_class": 900,
+    "seed": 0,
+    "extra": false,
+    "data": "synthetic compositional sentences (see training_data.py)"
+  },
+  "template_holdout": {
+    "n": 2400,
+    "accuracy": 0.7821,
+    "macro_f1": 0.786,
+    "per_class": {
+      "affirmed": {
+        "precision": 0.497,
+        "recall": 0.733,
+        "f1": 0.592,
+        "support": 300
+      },
+      "negated": {
+        "precision": 0.747,
+        "recall": 0.857,
+        "f1": 0.798,
+        "support": 300
+      },
+      "suspected": {
+        "precision": 0.754,
+        "recall": 0.737,
+        "f1": 0.745,
+        "support": 300
+      },
+      "family_history": {
+        "precision": 0.839,
+        "recall": 0.71,
+        "f1": 0.769,
+        "support": 300
+      },
+      "historical": {
+        "precision": 0.838,
+        "recall": 0.673,
+        "f1": 0.747,
+        "support": 300
+      },
+      "hypothetical": {
+        "precision": 0.786,
+        "recall": 0.613,
+        "f1": 0.689,
+        "support": 300
+      },
+      "lab_measurement": {
+        "precision": 0.997,
+        "recall": 1.0,
+        "f1": 0.998,
+        "support": 300
+      },
+      "unrelated": {
+        "precision": 0.966,
+        "recall": 0.933,
+        "f1": 0.949,
+        "support": 300
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "affirmed",
+        "negated",
+        "suspected",
+        "family_history",
+        "historical",
+        "hypothetical",
+        "lab_measurement",
+        "unrelated"
+      ],
+      "matrix": [
+        [
+          220,
+          32,
+          1,
+          41,
+          4,
+          1,
+          1,
+          0
+        ],
+        [
+          28,
+          257,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ],
+        [
+          45,
+          33,
+          221,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          21,
+          0,
+          0,
+          213,
+          32,
+          34,
+          0,
+          0
+        ],
+        [
+          89,
+          3,
+          3,
+          0,
+          202,
+          0,
+          0,
+          3
+        ],
+        [
+          40,
+          0,
+          67,
+          0,
+          3,
+          184,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          300,
+          0
+        ],
+        [
+          0,
+          19,
+          1,
+          0,
+          0,
+          0,
+          0,
+          280
+        ]
+      ]
+    },
+    "errors": [
+      {
+        "text": "Might develop hypocalcemia in restrictive diets.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      },
+      {
+        "text": "Remote hypovitaminosis B12 corrected with replacement.",
+        "gold": "historical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Suggestive of deficit of cobalamin Plan unchanged.",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "Result: hypovitaminosis D.",
+        "gold": "affirmed",
+        "pred": "negated"
+      },
+      {
+        "text": "SHOWS LOW SERUM IRON ASSOCIATED WITH ANEMIA",
+        "gold": "affirmed",
+        "pred": "family_history"
+      },
+      {
+        "text": "Evaluate for vit. B12 reduced, 18 ng/mL unconfirmed.",
+        "gold": "suspected",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Prone to low vit D as advised.",
+        "gold": "hypothetical",
+        "pred": "unrelated"
+      },
+      {
+        "text": "On examination, Result: low serum vitamin B 12.",
+        "gold": "affirmed",
+        "pred": "negated"
+      },
+      {
+        "text": "45-year-old patient. Remote megaloblastic anemia. Return in 30 days.",
+        "gold": "historical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Might develop 25-OH vitamin D level reduced in older adults.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      },
+      {
+        "text": "Assess for calcium below the reference range unconfirmed",
+        "gold": "suspected",
+        "pred": "affirmed"
+      },
+      {
+        "text": "May cause vitamin B12 was low.",
+        "gold": "hypothetical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Note: May cause pernicious anemia. Plan unchanged.",
+        "gold": "hypothetical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Prior vitamin B12 low (18 pg/mL) corrected with replacement",
+        "gold": "historical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Suggestive of slight vit D insufficiency",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "Patient with folate depletion associated with anemia.",
+        "gold": "affirmed",
+        "pred": "family_history"
+      },
+      {
+        "text": "as assessed, assess for reduced 25-oh vitamin d levels advice given.",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "As assessed, Might develop low levels of cobalamin Plan unchanged.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      },
+      {
+        "text": "Comment: Suggestive of folate deficiency to be confirmed. Plan unchanged.",
+        "gold": "suspected",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Might develop 25-OH vitamin D below the reference range.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      },
+      {
+        "text": "Result: folic acid was low",
+        "gold": "affirmed",
+        "pred": "negated"
+      },
+      {
+        "text": "follow-up visit: might develop hypocalcemia as advised.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      },
+      {
+        "text": "Shows lack of cobalamin New tests requested.",
+        "gold": "affirmed",
+        "pred": "hypothetical"
+      },
+      {
+        "text": "Suggestive of hypovitaminosis D.",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "May cause megaloblastic anemia.",
+        "gold": "hypothetical",
+        "pred": "affirmed"
+      }
+    ]
+  },
+  "shipped_model_trained_on": {
+    "examples": 7200,
+    "split": "all cue phrases"
+  },
+  "handwritten_dev": {
+    "n": 120,
+    "accuracy": 0.9,
+    "macro_f1": 0.8977,
+    "per_class": {
+      "affirmed": {
+        "precision": 0.846,
+        "recall": 0.733,
+        "f1": 0.786,
+        "support": 15
+      },
+      "negated": {
+        "precision": 0.833,
+        "recall": 1.0,
+        "f1": 0.909,
+        "support": 15
+      },
+      "suspected": {
+        "precision": 0.812,
+        "recall": 0.867,
+        "f1": 0.839,
+        "support": 15
+      },
+      "family_history": {
+        "precision": 0.938,
+        "recall": 1.0,
+        "f1": 0.968,
+        "support": 15
+      },
+      "historical": {
+        "precision": 1.0,
+        "recall": 0.733,
+        "f1": 0.846,
+        "support": 15
+      },
+      "hypothetical": {
+        "precision": 0.929,
+        "recall": 0.867,
+        "f1": 0.897,
+        "support": 15
+      },
+      "lab_measurement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      },
+      "unrelated": {
+        "precision": 0.882,
+        "recall": 1.0,
+        "f1": 0.938,
+        "support": 15
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "affirmed",
+        "negated",
+        "suspected",
+        "family_history",
+        "historical",
+        "hypothetical",
+        "lab_measurement",
+        "unrelated"
+      ],
+      "matrix": [
+        [
+          11,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          11,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          13,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ]
+      ]
+    },
+    "errors": [
+      {
+        "text": "Vitamin D deficit found after testing.",
+        "gold": "affirmed",
+        "pred": "unrelated"
+      },
+      {
+        "text": "Vitamin B12 is low, under follow-up.",
+        "gold": "affirmed",
+        "pred": "suspected"
+      },
+      {
+        "text": "Ferritin below what is expected for age.",
+        "gold": "affirmed",
+        "pred": "suspected"
+      },
+      {
+        "text": "Marked calcium deficiency is observed.",
+        "gold": "affirmed",
+        "pred": "negated"
+      },
+      {
+        "text": "Doubt remains about vitamin D deficiency.",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "Iron deficiency has not been excluded.",
+        "gold": "suspected",
+        "pred": "negated"
+      },
+      {
+        "text": "Folate deficiency during a previous pregnancy.",
+        "gold": "historical",
+        "pred": "hypothetical"
+      },
+      {
+        "text": "Iron deficiency overcome with replacement.",
+        "gold": "historical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Old folate deficit.",
+        "gold": "historical",
+        "pred": "unrelated"
+      },
+      {
+        "text": "Presented with vitamin D deficiency in 2016.",
+        "gold": "historical",
+        "pred": "family_history"
+      },
+      {
+        "text": "Should vitamin D deficiency appear, supplement.",
+        "gold": "hypothetical",
+        "pred": "affirmed"
+      },
+      {
+        "text": "In case of iron deficiency, investigate bleeding.",
+        "gold": "hypothetical",
+        "pred": "suspected"
+      }
+    ]
+  },
+  "handwritten_blind": {
+    "n": 120,
+    "accuracy": 0.95,
+    "macro_f1": 0.9512,
+    "per_class": {
+      "affirmed": {
+        "precision": 0.778,
+        "recall": 0.933,
+        "f1": 0.848,
+        "support": 15
+      },
+      "negated": {
+        "precision": 0.933,
+        "recall": 0.933,
+        "f1": 0.933,
+        "support": 15
+      },
+      "suspected": {
+        "precision": 1.0,
+        "recall": 0.933,
+        "f1": 0.966,
+        "support": 15
+      },
+      "family_history": {
+        "precision": 0.929,
+        "recall": 0.867,
+        "f1": 0.897,
+        "support": 15
+      },
+      "historical": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      },
+      "hypothetical": {
+        "precision": 1.0,
+        "recall": 0.933,
+        "f1": 0.966,
+        "support": 15
+      },
+      "lab_measurement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      },
+      "unrelated": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "affirmed",
+        "negated",
+        "suspected",
+        "family_history",
+        "historical",
+        "hypothetical",
+        "lab_measurement",
+        "unrelated"
+      ],
+      "matrix": [
+        [
+          14,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ]
+      ]
+    },
+    "errors": [
+      {
+        "text": "Her ferritin is low.",
+        "gold": "affirmed",
+        "pred": "family_history"
+      },
+      {
+        "text": "Folate is sufficient.",
+        "gold": "negated",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Symptoms may represent vitamin D deficiency.",
+        "gold": "suspected",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Parents with B12 deficiency.",
+        "gold": "family_history",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Sibling with iron deficiency anemia.",
+        "gold": "family_history",
+        "pred": "affirmed"
+      },
+      {
+        "text": "Unless iron deficiency is present, no supplement is needed.",
+        "gold": "hypothetical",
+        "pred": "negated"
+      }
+    ]
+  }
+}

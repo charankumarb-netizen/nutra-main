@@ -1,0 +1,120 @@
+{"text": "Findings confirm an iron deficiency.", "label": "affirmed"}
+{"text": "She is vitamin D deficient.", "label": "affirmed"}
+{"text": "Low vitamin B12 noted on admission.", "label": "affirmed"}
+{"text": "Documented folate insufficiency.", "label": "affirmed"}
+{"text": "Calcium is below the reference range.", "label": "affirmed"}
+{"text": "The patient currently has iron-deficiency anemia.", "label": "affirmed"}
+{"text": "B12 deficiency is present.", "label": "affirmed"}
+{"text": "Her ferritin is low.", "label": "affirmed"}
+{"text": "Reduced vitamin D levels were found.", "label": "affirmed"}
+{"text": "He shows a lack of folic acid.", "label": "affirmed"}
+{"text": "Vitamin B12 depleted.", "label": "affirmed"}
+{"text": "Hypocalcemia on today's panel.", "label": "affirmed"}
+{"text": "Ongoing iron depletion.", "label": "affirmed"}
+{"text": "Decreased 25-OH vitamin D.", "label": "affirmed"}
+{"text": "Pernicious anemia.", "label": "affirmed"}
+{"text": "She does not have iron deficiency.", "label": "negated"}
+{"text": "B12 deficiency was excluded.", "label": "negated"}
+{"text": "No evidence of vitamin D insufficiency.", "label": "negated"}
+{"text": "Calcium is within normal limits.", "label": "negated"}
+{"text": "Ferritin unremarkable.", "label": "negated"}
+{"text": "Folate is sufficient.", "label": "negated"}
+{"text": "Neither iron nor B12 deficiency is present.", "label": "negated"}
+{"text": "Iron deficiency absent.", "label": "negated"}
+{"text": "Negative for calcium deficiency.", "label": "negated"}
+{"text": "Denies any vitamin D deficiency.", "label": "negated"}
+{"text": "Vitamin B12 level normal.", "label": "negated"}
+{"text": "Iron stores are adequate.", "label": "negated"}
+{"text": "No sign of folic acid deficit.", "label": "negated"}
+{"text": "Not iron deficient.", "label": "negated"}
+{"text": "Calcium normal.", "label": "negated"}
+{"text": "Iron deficiency is suspected.", "label": "suspected"}
+{"text": "Possibly low vitamin D.", "label": "suspected"}
+{"text": "Cannot exclude B12 deficiency at this stage.", "label": "suspected"}
+{"text": "Likely folate deficiency.", "label": "suspected"}
+{"text": "Evaluate for calcium deficiency.", "label": "suspected"}
+{"text": "Rule out iron deficiency.", "label": "suspected"}
+{"text": "Differential includes vitamin B12 deficiency.", "label": "suspected"}
+{"text": "Symptoms may represent vitamin D deficiency.", "label": "suspected"}
+{"text": "Possible iron depletion pending labs.", "label": "suspected"}
+{"text": "Query B12 deficiency.", "label": "suspected"}
+{"text": "Presumed folic acid deficiency, to be confirmed.", "label": "suspected"}
+{"text": "Work-up for suspected calcium deficiency.", "label": "suspected"}
+{"text": "Concern for iron deficiency.", "label": "suspected"}
+{"text": "Maybe a vitamin D deficit.", "label": "suspected"}
+{"text": "Appears to have low B12, awaiting results.", "label": "suspected"}
+{"text": "Her mother has iron deficiency.", "label": "family_history"}
+{"text": "Father with vitamin D deficiency.", "label": "family_history"}
+{"text": "Brother had B12 deficiency.", "label": "family_history"}
+{"text": "Grandmother diagnosed with calcium deficiency.", "label": "family_history"}
+{"text": "Positive family history for iron deficiency.", "label": "family_history"}
+{"text": "Aunt treated for folate deficiency.", "label": "family_history"}
+{"text": "Sister and mother both have low ferritin.", "label": "family_history"}
+{"text": "Daughter with vitamin D deficiency.", "label": "family_history"}
+{"text": "Parents with B12 deficiency.", "label": "family_history"}
+{"text": "Several relatives have iron deficiency.", "label": "family_history"}
+{"text": "Maternal side: vitamin D deficiency.", "label": "family_history"}
+{"text": "His father suffers from calcium deficiency.", "label": "family_history"}
+{"text": "Family members with folic acid deficiency.", "label": "family_history"}
+{"text": "Mother takes B12 injections for deficiency.", "label": "family_history"}
+{"text": "Sibling with iron deficiency anemia.", "label": "family_history"}
+{"text": "History of iron deficiency in her twenties.", "label": "historical"}
+{"text": "Vitamin D deficiency treated two years ago.", "label": "historical"}
+{"text": "Prior B12 deficiency, resolved.", "label": "historical"}
+{"text": "Previously had low calcium.", "label": "historical"}
+{"text": "Childhood iron deficiency.", "label": "historical"}
+{"text": "Folate deficiency in 2015, normalized after treatment.", "label": "historical"}
+{"text": "Formerly vitamin D deficient.", "label": "historical"}
+{"text": "He was treated for iron deficiency in the past.", "label": "historical"}
+{"text": "Past medical history: vitamin B12 deficiency.", "label": "historical"}
+{"text": "Resolved calcium deficiency.", "label": "historical"}
+{"text": "Earlier episode of iron deficiency.", "label": "historical"}
+{"text": "Hx of vitamin D deficiency.", "label": "historical"}
+{"text": "Folic acid deficiency years ago, corrected.", "label": "historical"}
+{"text": "Previously diagnosed with B12 deficiency.", "label": "historical"}
+{"text": "She had iron deficiency anemia in 2019, now resolved.", "label": "historical"}
+{"text": "Vegetarians are at risk of iron deficiency.", "label": "hypothetical"}
+{"text": "To prevent vitamin D deficiency, take sun exposure.", "label": "hypothetical"}
+{"text": "If B12 deficiency is found, start injections.", "label": "hypothetical"}
+{"text": "Avoid calcium deficiency by eating dairy.", "label": "hypothetical"}
+{"text": "Antacids may cause iron deficiency.", "label": "hypothetical"}
+{"text": "Dietary advice to avoid folate deficiency.", "label": "hypothetical"}
+{"text": "Monitor for vitamin B12 deficiency after surgery.", "label": "hypothetical"}
+{"text": "In case of vitamin D deficiency, repeat the test.", "label": "hypothetical"}
+{"text": "Strategies to prevent iron deficiency in pregnancy.", "label": "hypothetical"}
+{"text": "Prone to calcium deficiency.", "label": "hypothetical"}
+{"text": "Prophylaxis for folic acid deficiency.", "label": "hypothetical"}
+{"text": "Whether there is B12 deficiency will be checked later.", "label": "hypothetical"}
+{"text": "Risk of vitamin D deficiency in winter.", "label": "hypothetical"}
+{"text": "Heavy periods can lead to iron deficiency.", "label": "hypothetical"}
+{"text": "Unless iron deficiency is present, no supplement is needed.", "label": "hypothetical"}
+{"text": "Ferritin 15 ng/mL", "label": "lab_measurement"}
+{"text": "Vitamin D (25-OH): 31 ng/mL", "label": "lab_measurement"}
+{"text": "B12: 480 pg/mL", "label": "lab_measurement"}
+{"text": "Calcium: 9.6 mg/dL", "label": "lab_measurement"}
+{"text": "Hb 13.1 g/dL", "label": "lab_measurement"}
+{"text": "Folate 5.2 ng/mL", "label": "lab_measurement"}
+{"text": "Iron, serum: 80 ug/dL", "label": "lab_measurement"}
+{"text": "TSAT 28 %", "label": "lab_measurement"}
+{"text": "Cobalamin 190 pg/mL", "label": "lab_measurement"}
+{"text": "Calcium, ionized: 1.2 mmol/L", "label": "lab_measurement"}
+{"text": "Ferritin = 310 ng/mL (reference 20 - 300)", "label": "lab_measurement"}
+{"text": "25-hydroxyvitamin D 22 ng/mL", "label": "lab_measurement"}
+{"text": "Vitamin B12 level: 305 pg/mL", "label": "lab_measurement"}
+{"text": "Folic acid 3.1 ng/mL", "label": "lab_measurement"}
+{"text": "Serum calcium 7.9 mg/dL", "label": "lab_measurement"}
+{"text": "Complains of lower back pain.", "label": "unrelated"}
+{"text": "Heart rate regular.", "label": "unrelated"}
+{"text": "Follow-up after surgery next month.", "label": "unrelated"}
+{"text": "Denies fever and chills.", "label": "unrelated"}
+{"text": "Moderate hearing loss.", "label": "unrelated"}
+{"text": "Previously had pneumonia.", "label": "unrelated"}
+{"text": "Possible gallstones.", "label": "unrelated"}
+{"text": "Prevention of pressure ulcers advised.", "label": "unrelated"}
+{"text": "Mother with breast cancer.", "label": "unrelated"}
+{"text": "Cholesterol 210 mg/dL.", "label": "unrelated"}
+{"text": "Allergic to latex.", "label": "unrelated"}
+{"text": "Abdomen soft.", "label": "unrelated"}
+{"text": "MRI of the knee requested.", "label": "unrelated"}
+{"text": "Lactase deficiency suspected.", "label": "unrelated"}
+{"text": "No cognitive deficit noted.", "label": "unrelated"}

@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "language": "pt",
+  "image": "C:\\Users\\KURAGALA YASWANTH\\OneDrive\\Desktop\\NutriCheck\\person1-ocr\\tests\\sample_images\\sample_report.jpg",
+  "preprocessing": true,
+  "text": "RELATÓRIO MÉDICO\nPaciente: TESTE\nHemoglobina: 10,2 g/dL\nVitamina D: 18 ng/mL\nVitamina B12: 150 pg/mL\nObservação:\nPaciente apresenta deficiência de vitamina B12.",
+  "lines": [
+    {
+      "text": "RELATÓRIO MÉDICO",
+      "confidence": 0.9997087717056274,
+      "box": [
+        4,
+        108,
+        234,
+        139
+      ]
+    },
+    {
+      "text": "Paciente: TESTE",
+      "confidence": 0.9994403123855591,
+      "box": [
+        2,
+        175,
+        185,
+        201
+      ]
+    },
+    {
+      "text": "Hemoglobina: 10,2 g/dL",
+      "confidence": 0.9996860027313232,
+      "box": [
+        2,
+        240,
+        273,
+        266
+      ]
+    },
+    {
+      "text": "Vitamina D: 18 ng/mL",
+      "confidence": 0.9998706579208374,
+      "box": [
+        1,
+        272,
+        249,
+        298
+      ]
+    },
+    {
+      "text": "Vitamina B12: 150 pg/mL",
+      "confidence": 0.9993587732315063,
+      "box": [
+        1,
+        305,
+        288,
+        328
+      ]
+    },
+    {
+      "text": "Observação:",
+      "confidence": 0.999982476234436,
+      "box": [
+        0,
+        368,
+        146,
+        395
+      ]
+    },
+    {
+      "text": "Paciente apresenta deficiência de vitamina B12.",
+      "confidence": 0.9974479675292969,
+      "box": [
+        0,
+        400,
+        550,
+        426
+      ]
+    }
+  ],
+  "line_count": 7,
+  "average_confidence": 0.9993564231055123,
+  "processing_time_seconds": 14.238
+}

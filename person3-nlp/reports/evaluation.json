@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "gold": {
+      "targets_checked": 462,
+      "accuracy": 1.0,
+      "deficiency_precision": 1.0,
+      "deficiency_recall": 1.0
+    },
+    "synthetic": {
+      "targets_checked": 30000,
+      "accuracy": 1.0,
+      "deficiency_precision": 1.0,
+      "deficiency_recall": 1.0
+    }
+  },
+  "failures": [],
+  "n_failures": 0
+}

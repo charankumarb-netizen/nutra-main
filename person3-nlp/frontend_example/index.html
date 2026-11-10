@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NutriCheck — nutrient deficiency screening support</title>
+<style>
+  :root { --ok:#27ae60; --bad:#c0392b; --warn:#e67e22; --sus:#d4ac0d; --conf:#8e44ad; --mut:#7f8c8d; }
+  body { font-family: system-ui, sans-serif; max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; color: #222; }
+  h1 { margin-bottom: .2rem } .sub { color: var(--mut); margin-top: 0 }
+  fieldset { border: 1px solid #ddd; border-radius: 8px; margin: .8rem 0 }
+  textarea { width: 100%; height: 150px; box-sizing: border-box }
+  button { padding: .5rem 1rem; border-radius: 6px; border: 1px solid #888; background: #f4f4f4; cursor: pointer }
+  button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb }
+  .tabs button.active { background: #1f6feb; color: #fff }
+  .card { border: 2px solid #ccc; border-radius: 8px; padding: .5rem .7rem; margin: .35rem 0 }
+  .deficient { border-color: var(--bad) } .borderline { border-color: var(--warn) } .not_deficient { border-color: var(--ok) }
+  .suspected { border-color: var(--sus) } .conflicting { border-color: var(--conf) } .not_assessed { border-color: #ddd }
+  .okbox { background: #eafaf1; border: 1px solid var(--ok); padding: .5rem; border-radius: 6px }
+  .review { background: #fff4e5; border: 1px solid var(--warn); padding: .5rem; border-radius: 6px }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; margin: .3rem 0 }
+  th, td { border: 1px solid #ddd; padding: .25rem .4rem; text-align: left; vertical-align: top }
+  progress { width: 100%; height: 14px } .hidden { display: none } .err { color: var(--bad) }
+  small, .mut { color: var(--mut) }
+</style>
+</head>
+<body>
+<h1>🥗 NutriCheck</h1>
+<p class="sub">Iron · Vitamin D · Vitamin B12 · Calcium · Folic acid — screening support, <b>not a diagnosis</b>. English reports only.</p>
+
+<fieldset><legend>Server</legend>
+  API: <input id="api" size="52" value="http://localhost:8000">
+  <details><summary class="mut">API key?</summary>
+    <small>Never put a secret key in public JavaScript: use a proxy on your server that adds the X-API-Key header.</small>
+  </details>
+</fieldset>
+
+<div class="tabs">
+  <button id="tabText" class="active">📝 Text</button>
+  <button id="tabFile">📄 File (PDF · DOCX · CSV · TXT · image)</button>
+  <button id="tabExplain">💬 Explain my report</button>
+</div>
+
+<fieldset id="paneText"><legend>Report text</legend>
+  <textarea id="t">Laboratory results
+Ferritin: 9 ng/mL (Ref: 15 - 150)
+Vitamin D: 45 ng/mL
+No vitamin B12 deficiency.
+Patient denies taking iron supplements.</textarea><br>
+  Sex: <select id="sex"><option value="">detect</option><option value="F">Female</option><option value="M">Male</option></select>
+  <button id="goText" class="primary">Analyze text</button>
+</fieldset>
+
+<fieldset id="paneFile" class="hidden"><legend>File</legend>
+  <input id="f" type="file" accept=".pdf,.docx,.txt,.csv,.jpg,.jpeg,.png,.bmp,.tif,.tiff,.webp">
+  <button id="goFile" class="primary">Upload and analyze</button>
+  <div id="progressBox" class="hidden"><progress id="prog" max="100" value="0"></progress><div id="progLabel" class="mut"></div></div>
+</fieldset>
+
+<fieldset id="paneExplain" class="hidden"><legend>Explain the text above</legend>
+  Level: <select id="level">
+    <option value="simple_en">Very simple English</option><option value="detailed_en">Detailed English</option>
+    <option value="medical_en">Medical terminology with definitions</option><option value="te">Telugu</option><option value="hi">Hindi</option></select>
+  <button id="goExplain" class="primary">Explain</button>
+</fieldset>
+
+<div id="msg"></div>
+<div id="out"></div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const MAX_MB = 10;                                   // keep in sync with NUTRICHECK_MAX_UPLOAD_MB on the server
+let lastResults = [];
+
+// Safe DOM builder: API data is ALWAYS inserted as text nodes (never parsed as HTML) -> no XSS from report text.
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) { if (k === 'class') e.className = v; else e[k] = v; }
+  for (const k of kids.flat()) if (k != null) e.append(k.nodeType ? k : document.createTextNode(String(k)));
+  return e;
+}
+const api = path => $('api').value.replace(/\/$/, '') + path;
+const show = (text, cls = '') => { $('msg').replaceChildren(el('p', {class: cls}, text)); };
+
+function tab(which) {
+  for (const [id, name] of [['paneText', 'text'], ['paneFile', 'file'], ['paneExplain', 'explain']]) $(id).classList.toggle('hidden', which !== name);
+  for (const [id, name] of [['tabText', 'text'], ['tabFile', 'file'], ['tabExplain', 'explain']]) $(id).classList.toggle('active', which === name);
+}
+$('tabText').onclick = () => tab('text'); $('tabFile').onclick = () => tab('file'); $('tabExplain').onclick = () => tab('explain');
+
+const VERDICT = {ok: 'Passed all quality checks', verify: 'Some values need to be verified',
+  insufficient_information: 'Not enough information (a safe outcome, not an error)',
+  cannot_determine: 'Cannot reliably determine (a safe outcome, not an error)'};
+
+function list(title, items) {
+  return items && items.length ? el('div', {}, el('b', {}, title), el('ul', {}, ...items.map(x => el('li', {}, x)))) : null;
+}
+
+function render(results) {
+  lastResults = results;
+  const out = $('out'); out.replaceChildren();
+  results.forEach(r => {
+    const box = el('section');
+    if (results.length > 1) box.append(el('h3', {}, 'Record ' + (r.record_id ?? '')));
+    if (r.quality) {
+      box.append(el('p', {class: r.quality.verdict === 'ok' ? 'okbox' : 'review'}, (VERDICT[r.quality.verdict] || r.quality.verdict) + ' — ' + r.quality.message));
+      if (r.quality.actions.length) box.append(list('What to do', r.quality.actions));
+    }
+    if (r.needs_human_review) box.append(el('p', {class: 'review'}, '⚠ Human review needed (conflict, implausible value, low confidence, missing unit, suspicion or model disagreement).'));
+    [...r.nutrients, ...r.findings].filter(n => n.status !== 'not_assessed' || r.nutrients.includes(n)).forEach(n => {
+      const card = el('div', {class: 'card ' + n.status},
+        el('b', {}, n.name), ': ', n.status_label, n.confidence ? ` (${Math.round(n.confidence * 100)}%)` : '',
+        n.reliability && n.reliability !== 'ok' ? ` · reliability: ${n.reliability}` : '', n.needs_review ? ' ⚠' : '');
+      if (n.evidence_items && n.evidence_items.length) {
+        const head = el('tr', {}, ...['Type', 'Evidence', 'Value', 'Unit', 'Page', 'Line'].map(h => el('th', {}, h)));
+        const rows = n.evidence_items.map(i => el('tr', {},
+          el('td', {}, i.type === 'lab' ? 'lab' : 'text'), el('td', {}, i.sentence || i.text),
+          el('td', {}, i.value ?? ''), el('td', {}, i.unit ?? ''), el('td', {}, i.location.page ?? '—'), el('td', {}, i.location.line)));
+        card.append(el('table', {}, head, ...rows));
+      }
+      const d = n.detective || {};
+      (d.evidence || []).forEach(e => card.append(el('div', {class: 'mut'}, `Evidence: ${e.found} — ${e.location_text}` + (e.date ? ` — ${e.date}` : ''))));
+      card.append(list('Context', d.context), list('Missing information', d.missing_information));
+      (n.review_reasons || []).forEach(x => card.append(el('div', {class: 'mut'}, 'review: ' + x.replaceAll('_', ' '))));
+      box.append(card);
+    });
+    if (r.warnings && r.warnings.length) box.append(el('details', {}, el('summary', {}, `Warnings (${r.warnings.length})`), el('ul', {}, ...r.warnings.map(w => el('li', {}, w)))));
+    if (r.processing_report) {
+      const pr = r.processing_report;
+      box.append(el('details', {}, el('summary', {}, `Processing report — ${pr.pages_processed_ok}/${pr.pages.length} page(s) processed cleanly`),
+        el('p', {}, `format ${pr.file_format}, type ${pr.document_type}, language ${pr.language}, method ${pr.method}`),
+        el('ul', {}, ...pr.pages.map(p => el('li', {}, `page ${p.page ?? '—'}: ${p.status} (${p.values_found} value(s), ${p.values_needing_verification} to verify)`)))));
+    }
+    box.append(el('small', {}, r.disclaimer));
+    out.append(box);
+  });
+  out.append(el('p', {},
+    el('button', {onclick: () => download('nutricheck.json', JSON.stringify(lastResults, null, 2), 'application/json')}, 'Download JSON'), ' ',
+    el('button', {onclick: () => download('nutricheck.csv', toCsv(lastResults), 'text/csv')}, 'Download report CSV')));
+}
+
+function toCsv(results) {
+  const q = v => '"' + String(v ?? '').replaceAll('"', '""') + '"';
+  const rows = [['record', 'item', 'status', 'confidence', 'reliability', 'needs_review', 'evidence', 'pages'].map(q).join(',')];
+  results.forEach(r => [...r.nutrients, ...r.findings].forEach(n => rows.push([
+    r.record_id ?? '', n.name, n.status, n.confidence, n.reliability, n.needs_review, (n.evidence || []).join(' | '),
+    [...new Set((n.evidence_items || []).map(i => i.location.page).filter(p => p != null))].join(',')].map(q).join(','))));
+  return rows.join('\n');
+}
+function download(name, content, type) {
+  const a = el('a', {href: URL.createObjectURL(new Blob([content], {type})), download: name}); a.click(); URL.revokeObjectURL(a.href);
+}
+
+$('goText').onclick = async () => {
+  show('Analyzing…'); $('out').replaceChildren();
+  try {
+    const r = await fetch(api('/v1/analyze/text'), {method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({text: $('t').value, sex: $('sex').value || null})});
+    if (!r.ok) throw new Error(r.status + ' ' + JSON.stringify((await r.json().catch(() => ({}))).detail));
+    $('msg').replaceChildren(); render([await r.json()]);
+  } catch (e) { show('Error: ' + e.message, 'err'); }
+};
+
+$('goExplain').onclick = async () => {
+  show('Explaining…'); $('out').replaceChildren();
+  try {
+    const r = await fetch(api('/v1/explain'), {method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({text: $('t').value, level: $('level').value, sex: $('sex').value || null})});
+    if (!r.ok) throw new Error(r.status + ' ' + JSON.stringify((await r.json().catch(() => ({}))).detail));
+    const ex = (await r.json()).explanation;
+    $('msg').replaceChildren();
+    const box = el('section', {}, el('h3', {}, ex.title));
+    if (ex.notice) box.append(el('p', {class: 'review'}, ex.notice));
+    ex.sections.forEach(s => s.paragraphs.forEach(p => box.append(el('p', {}, p.text, p.evidence_refs.length ? ' [' + p.evidence_refs.join(', ') + ']' : ''))));
+    box.append(list(ex.questions_title, ex.questions), el('small', {}, ex.disclaimer));
+    $('out').append(box);
+  } catch (e) { show('Error: ' + e.message, 'err'); }
+};
+
+$('goFile').onclick = () => {
+  const file = $('f').files[0];
+  if (!file) return show('Choose a file.', 'err');
+  if (file.size > MAX_MB * 1024 * 1024) return show(`File larger than ${MAX_MB} MB.`, 'err');
+  const fd = new FormData(); fd.append('file', file);
+  const xhr = new XMLHttpRequest();                        // XHR gives upload progress (fetch does not)
+  xhr.open('POST', api('/v1/analyze/file'));
+  $('progressBox').classList.remove('hidden'); $('prog').value = 0; $('progLabel').textContent = 'Uploading…'; $('out').replaceChildren(); $('msg').replaceChildren();
+  xhr.upload.onprogress = e => { if (e.lengthComputable) { $('prog').value = Math.round(e.loaded / e.total * 100); $('progLabel').textContent = `Uploading… ${$('prog').value}%`; } };
+  xhr.upload.onload = () => { $('prog').removeAttribute('value'); $('progLabel').textContent = 'Reading the document and analyzing (OCR can take a few seconds)…'; };
+  xhr.onload = () => {
+    $('progressBox').classList.add('hidden');
+    let body = {}; try { body = JSON.parse(xhr.responseText); } catch (_) {}
+    if (xhr.status !== 200) return show(`Error ${xhr.status}: ${body.detail || xhr.statusText}`, 'err');
+    show(`${body.document.filename} — ${body.document.kind}, ${body.document.page_count} page(s), ${body.count} record(s)`);
+    render(body.results);
+  };
+  xhr.onerror = () => { $('progressBox').classList.add('hidden'); show('Network or CORS failure: check the API URL and NUTRICHECK_CORS_ORIGINS.', 'err'); };
+  xhr.send(fd);
+};
+</script>
+</body>
+</html>

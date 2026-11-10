@@ -1,0 +1,82 @@
+{
+    "success": true,
+    "language": "en",
+    "image": "person1-ocr\\outputs\\sample_report_preprocessed.jpg",
+    "preprocessing": true,
+    "text": "RELATÓRIO MÉDICO\nPaciente: TESTE\nHemoglobina: 10,2 g/dL\nVitamina D: 18 ng/mL\nVitamina B12: 150 pg/mL\nObservação:\nPaciente apresenta deficiência de vitamina B12.",
+    "lines": [
+        {
+            "text": "RELATÓRIO MÉDICO",
+            "confidence": 0.9995639324188232,
+            "box": [
+                7,
+                120,
+                232,
+                155
+            ]
+        },
+        {
+            "text": "Paciente: TESTE",
+            "confidence": 0.998741090297699,
+            "box": [
+                6,
+                184,
+                181,
+                213
+            ]
+        },
+        {
+            "text": "Hemoglobina: 10,2 g/dL",
+            "confidence": 0.9997942447662354,
+            "box": [
+                4,
+                246,
+                274,
+                274
+            ]
+        },
+        {
+            "text": "Vitamina D: 18 ng/mL",
+            "confidence": 0.9999103546142578,
+            "box": [
+                3,
+                277,
+                249,
+                305
+            ]
+        },
+        {
+            "text": "Vitamina B12: 150 pg/mL",
+            "confidence": 0.9998706579208374,
+            "box": [
+                0,
+                306,
+                289,
+                335
+            ]
+        },
+        {
+            "text": "Observação:",
+            "confidence": 0.9999797940254211,
+            "box": [
+                0,
+                369,
+                149,
+                398
+            ]
+        },
+        {
+            "text": "Paciente apresenta deficiência de vitamina B12.",
+            "confidence": 0.9999536275863647,
+            "box": [
+                0,
+                396,
+                550,
+                430
+            ]
+        }
+    ],
+    "line_count": 7,
+    "average_confidence": 0.999687671661377,
+    "processing_time_seconds": 17.153
+}
